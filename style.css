@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #F5F5F5;
+    --secondary-color: #3B82F6;
+    --text-white: #FFFFFF;
+    --text-body: #1F2A44;
+
+    --font-body: "Inter", sans-serif;
+    --font-heading: "Montserrat", sans-serif;
+    --font-light: 200;
+    --font-regular: 400;
+    --font-semibold: 500;
+    --font-bold: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: var(--font-body);
+}
+
+h1,
+h3,
+p,
+a {
+    color: var(--text-body);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.header {
+    padding: 1rem 0;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-family: var(--font-heading);
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--font-heading);
+    z-index: 99;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-body);
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    color: var(--text-body);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.nav-toggle i {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 8rem;
+}
+
+.hero-content {
+    flex: 1 1 45%;
+    padding-left: 6rem;
+}
+
+.hero .title {
+    font-size: 2.7rem;
+    color: var(--text-body);
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.hero .job {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+.btn-group {
+    margin-top: 1.5rem;
+}
+
+.btn-group button {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn-group button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-white);
+}
+
+.profile {
+    flex: 1 1 40%;
+    text-align: center;
+}
+
+.profile img {
+    width: 55%;
+    height: auto;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary-color);
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-list {
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle .ri-menu-line {
+        display: inline-block;
+    }
+
+    .nav-toggle.active .ri-menu-line {
+        display: none;
+    }
+
+    .nav-toggle.active .ri-close-line {
+        display: inline-block;
+    }
+
+    .hero {
+        margin-top: 4.5rem;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-content,
+    .profile {
+        flex: 1 1 100%;
+        padding: 0;
+    }
+
+    .hero .title {
+        font-size: 2rem;
+    }
+
+    .profile img {
+        width: 50%;
+    }
+
+    .btn-group button {
+        padding: 0.5rem 1rem;
+    }
+}
